@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.container {
+    display: flex;
+}
+
+.key {
+    border: 1px solid black;
+
+}
+
+.white-key {
+    width: 60px;
+    height: 200px;
+}
