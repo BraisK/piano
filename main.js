@@ -1,9 +1,15 @@
+import getNoteFromKey from './noteUtils';
 import './style.css'
 import * as Tone from "tone";
 
-const synth = new Tone.Synth().toDestination();
-
-//document.querySelector('[data-note="C4"]').addEventListener('click', () => playNote('C4'))
+//const synth = new Tone.Synth().toDestination();
+const synth = new Tone.Sampler({
+    urls: {
+       C4: "C4.mp3"       
+    },
+    release: 1,
+    baseUrl: "https://tonejs.github.io/audio/salamander/"    
+}).toDestination();
 
 let keys = document.querySelectorAll('.key')
 for (let key of keys) {
@@ -12,6 +18,15 @@ for (let key of keys) {
     key.addEventListener('mouseup', () => stopNote())
     key.addEventListener('mouseleave', () => stopNote())
 
+}
+
+document.addEventListener('keypress', ctrlTeclado)
+document.addEventListener('keyup', stopNote)
+
+function ctrlTeclado(event) {
+    let keyName = event.key
+    let note=getNoteFromKey[keyName]
+    playNote(note)
 }
 
 function playNote(note) {
