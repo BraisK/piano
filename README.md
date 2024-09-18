@@ -14,6 +14,10 @@ Instalar una dependencia en particular
 ```
 npm install xxx
 ```
+Deployar a github
+```
+npm run deploy
+``` 
 
 
 
@@ -22,14 +26,14 @@ Tendra tanto tecals blancas como negras
 Sonará commo un piano de verdad
 Se podrá tocar tambien con el teclado del ordenador
 
-- [ ] Mostrar una web con las teclas blancas (sin sonido) 
-- [ ] Permitir que el usuario pulse en teclas y suene
-- [ ] Añadir las teclas negras
+- [x] Mostrar una web con las teclas blancas (sin sonido) 
+- [x] Permitir que el usuario pulse en teclas y suene
+- [x] Añadir las teclas negras
 - [ ] Permitir que el usuario toque el piano con el teclado del ordenador
 - [ ] Incorporar sonido reales
 - [ ] Refactorizar
 - [ ] testear
-- [ ] Deployar
+- [x] Deployar
 
 
 
@@ -38,3 +42,5 @@ Se podrá tocar tambien con el teclado del ordenador
 - Código optimizado (opcional)
 - Código flexible <-- Refactoriazación
 - Código seguro
+
+npm i gh-pages
