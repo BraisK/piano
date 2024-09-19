@@ -6,11 +6,12 @@ body {
     height: 100vh;
     background: linear-gradient(135deg, #79CBCA, #E684AE);
 }
-h1{
+
+h1 {
     background: #121FCF;
-background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
 
@@ -60,4 +61,17 @@ background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
 
 [data-note='A#4'] {
     left: 300px;
+}
+
+.key:hover {
+    background-color: #269bdf;
+}
+
+.key:active {
+    background-color: #269bdf;
+
+}
+
+.pressed {
+    background-color: #269bdf;
 }

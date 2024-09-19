@@ -4,16 +4,16 @@ import * as Tone from "tone";
 
 //const synth = new Tone.Synth().toDestination();
 const synth = new Tone.Sampler({
-	urls: {
-		C4: "C4.mp3",
-		"C#4": "Ds4.mp3",
-		"F#4": "Fs4.mp3",
-		A4: "A4.mp3",
-	},
-	release: 1,
-	baseUrl: "https://tonejs.github.io/audio/salamander/",
+    urls: {
+        C4: "C4.mp3",
+        "C#4": "Ds4.mp3",
+        "F#4": "Fs4.mp3",
+        A4: "A4.mp3",
+    },
+    release: 1,
+    baseUrl: "https://tonejs.github.io/audio/salamander/",
 }).toDestination();
- 
+
 
 let keys = document.querySelectorAll('.key')
 for (let key of keys) {
@@ -28,9 +28,10 @@ document.addEventListener('keyup', stopNote)
 function ctrlTeclado(event) {
     let keyName = event.key
 
-    // let note = keyMap[keyName]
+
     let note = getNoteFromkey(keyName)
-    //obtiene el nombre de la nota a partir de la tecla del teclado
+    let key =document.querySelector('[data-note='+note+']')
+    key&& key.classList.add('pressed')
     playNote(note)
 }
 
@@ -40,4 +41,10 @@ function playNote(note) {
 
 function stopNote() {
     synth.triggerRelease();
+    let keyName = event.key
+
+
+    let note = getNoteFromkey(keyName)
+    let key =document.querySelector('[data-note='+note+']')
+    key&& key.classList.remove('pressed')
 }
